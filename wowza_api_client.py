@@ -7,14 +7,14 @@ import json
 import requests
 
 
-class WawzaAPIException(Exception):
+class WowzaAPIException(Exception):
 
     def __init__(self, message, code):
-        super(WawzaAPIException, self).__init__(message)
+        super(WowzaAPIException, self).__init__(message)
         self.code = code
 
 
-class WawzaAPIClient:
+class WowzaAPIClient:
 
     base_url = 'https://api.cloud.wowza.com/api/v1'
 
@@ -40,7 +40,7 @@ class WawzaAPIClient:
             if 'meta' in json_data:
                 meta = json_data['meta']
                 if 'message' in meta and 'status' in meta:
-                    raise WawzaAPIException(meta['message'], meta['status'])
+                    raise WowzaAPIException(meta['message'], meta['status'])
             return json_data
         except Exception as e:
             raise e

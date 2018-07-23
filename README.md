@@ -13,6 +13,6 @@ But you can easily extend this script to your project, if you love python :wink:
 api_key    = 'xxxxxx'
 access_key = 'xxxxxx'
 
-api_client = WawzaAPIClient(api_key=api_key, access_key=access_key)
+api_client = WowzaAPIClient(api_key=api_key, access_key=access_key)
 res = api_client.fetch_live_streams()
 ```
